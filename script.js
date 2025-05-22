@@ -77,7 +77,7 @@ function handleScroll(e) {
 window.addEventListener("wheel", handleScroll, { passive: false });
 
 let touchStartY = 0;
-const touchThreshold = 40;
+const touchThreshold = 25;
 
 window.addEventListener("touchstart", (e) => {
     touchStartY = e.touches[0].clientY;
