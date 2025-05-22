@@ -44,6 +44,17 @@ header {
   top: 70%;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 700px){
+  .scroller-top{
+    top: 10%;
+  }
+  .scroller-bottom{
+    top: 50M;
+  }
+  .scroller-fruits{
+    top: 90%;
+  }
+}
 
 .scroller-content {
   display: inline-block;
