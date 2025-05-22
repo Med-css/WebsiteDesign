@@ -603,9 +603,9 @@ header {
     rotate: 19deg;
       transform: translateY(-200px);
       scale: 1.2;
-    
-
-
+}
+.herbe2{
+  display: none;
 }
 
 }
