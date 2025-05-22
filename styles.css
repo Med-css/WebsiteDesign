@@ -1,0 +1,600 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== SCROLLERS ===== */
+.scroller {
+  position: absolute;
+  width: 100%;
+  padding: 10px 0;
+  color: lightgray;
+  font-family: sans-serif;
+  font-size: 70px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 0;
+  font-weight: bold;
+}
+
+.scroller-top {
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.scroller-bottom {
+  top: 55%;
+  transform: translateY(-50%);
+  color: transparent;
+  -webkit-text-stroke: 1px lightgray;
+  text-stroke: 1px lightgray;
+  text-shadow: none;
+}
+
+.scroller-fruits {
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.scroller-content {
+  display: inline-block;
+  animation: scrollText 20s linear infinite;
+}
+
+.scroller-content.reverse {
+  animation: scrollTextReverse 20s linear infinite;
+}
+
+.scroller-content span {
+  display: inline-block;
+  padding-right: 3rem;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollTextReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ===== SODA ANIMATION ===== */
+.soda {
+  background-position: -100px 0, 0 0;
+  background-size: auto 100%;
+  width: 200px;
+  aspect-ratio: 2/4.1;
+  background-blend-mode: multiply;
+  mask-image: url(./img/soda.png);
+  mask-size: auto 100%;
+  transition: 0.7s;
+  animation: sodaanimation 10s linear infinite;
+}
+
+.soda2 {
+  background-position: -100px 0, 0 0;
+  background-size: auto 100%;
+  width: 200px;
+  aspect-ratio: 2/4.1;
+  background-blend-mode: multiply;
+  mask-image: url(./img/soda.png);
+  mask-size: auto 100%;
+  transition: 0.7s;
+}
+
+.mark1 {
+  background-image: url(./img/mark1.png), url(./img/soda.png);
+}
+
+.mark2 {
+  background-image: url(./img/mark2.png), url(./img/soda.png);
+}
+
+.mark3 {
+  background-image: url(./img/mark3.png), url(./img/soda.png);
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container1 est maintenant FIXED */
+.container1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  transition: all 1s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+@keyframes container1 {
+  from {
+    transform: translate(-50%, -200%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.container2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  animation: container2 1.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+
+.container2.home2 {
+  left: 100% !important;
+}
+
+@keyframes container2 {
+  from {
+    rotate: 0;
+    opacity: 0;
+    transform: translate(-50%, -40%);
+    scale: 1;
+  }
+  to {
+    rotate: 20deg;
+    opacity: 1;
+    transform: translate(-25%, -50%);
+    scale: 0.9;
+    filter: blur(2px);
+  }
+}
+
+@keyframes container2phone {
+  from {
+    rotate: 0;
+    opacity: 0;
+    transform: translate(-50%, -40%);
+    scale: 1;
+  }
+  to {
+    rotate: 20deg;
+    opacity: 1;
+    transform: translate(-35%, -50%);
+    scale: 0.9;
+    filter: blur(2px);
+  }
+}
+
+
+.container3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  animation: container3 1.5s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 1.7s;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.container3.home2 {
+  left: 0% !important;
+}
+
+@media (max-width: 600px) {
+  .soda {
+    scale: 0.8;
+  }
+  .soda2 {
+    scale: 0.8;
+  }
+  .container3 {
+    animation: container3phone 1.5s ease-in-out forwards;
+  }
+  .container2 {
+    animation: container2phone 1.5s ease-in-out forwards;
+  }
+}
+
+@keyframes container3 {
+  from {
+    rotate: 0;
+    opacity: 0;
+    transform: translate(-50%, -80%);
+    scale: 1;
+  }
+  to {
+    rotate: -20deg;
+    opacity: 1;
+    transform: translate(-75%, -70%);
+    scale: 0.9;
+    filter: blur(4px);
+  }
+}
+
+@keyframes container3phone {
+  from {
+    rotate: 0;
+    opacity: 0;
+    transform: translate(-50%, -80%);
+    scale: 1;
+  }
+  to {
+    rotate: -20deg;
+    opacity: 1;
+    transform: translate(-65%, -70%);
+    scale: 0.9;
+    filter: blur(4px);
+  }
+}
+
+@keyframes sodaanimation {
+  0% {
+    background-position: -100px 0, 0 0;
+  }
+  100% {
+    background-position: -673px 0, 0 0;
+  }
+}
+
+.section1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundred {
+  background: linear-gradient(to right, white, #b3003c);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.backgroundviolet {
+  background: linear-gradient(to right, white, #4b006e);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.backgroundtropical {
+  background: linear-gradient(to right, #ffffff, #00bfa5, #ff9800);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+
+.fruits-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(./img/fruits.png);
+  background-repeat: repeat;
+  background-size: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(3px);
+}
+
+.hero-text {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  transform: translate(0%, -200%);
+  z-index: 10000;
+  max-width: 500px;
+  padding-left: 2em;
+  pointer-events: none;
+  transition: all 1.5s ease-in-out;
+  min-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px){
+    .hero-text{
+          min-width: 90%;
+            flex-direction: column-reverse;
+            gap: 30px;
+
+
+    }
+}
+
+.hero-text.active {
+  animation: textappear 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes textappear {
+  from {
+    transform: translate(0%, -200%);
+  }
+  to {
+    transform: translate(0%, -20%);
+  }
+}
+
+.hero-card {
+  display: flex;
+  gap: 10px;
+}
+
+.cardchoose {
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: blur(2px);
+  scale: 0.9;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(-50px);
+  cursor: pointer;
+}
+
+.cardchoose.home2 {
+  animation: fadeincardchoose 0.5s forwards;
+}
+
+.cardchoose.disabled {
+  opacity: 1;
+  transform: translateY(0px);
+  animation: nothing 0s ease-in-out forwards;
+}
+
+@keyframes fadeincardchoose {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fraisechoose {
+  background-image: url(./img/redsoda.png);
+}
+
+.raisinchoose {
+  background-image: url(./img/purplesoda.png);
+}
+
+.tropicalchoose {
+  background-image: url(./img/tropicalsoda.png);
+}
+
+.cardchoose.active {
+  rotate: 19deg;
+  filter: blur(0px);
+  scale: 1;
+  opacity: 1;
+  transform: translateY(0px);
+  animation: floatEffect 2s ease-in-out infinite;
+}
+
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-text h1 {
+  font-size: clamp(1.5rem, 6vw, 5rem);
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(90deg, #f9d5237f, #ff4e5181);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white,
+    0 4px 15px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+}
+
+#letteranimation .word {
+  display: block;
+  white-space: nowrap;
+  margin-bottom: 0em;
+}
+
+#letteranimation span.letter {
+  display: inline-block;
+  position: relative;
+  animation-name: jump;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
+.section2{
+    position: relative;
+    height: 180vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(./img/champ.png);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    
+
+
+    mask-image: linear-gradient(to bottom,
+        black 0%,
+        black 0%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(to bottom,
+        black 0%,
+        black 10%,
+        transparent 100%
+    );
+}
+.bg-overlay.mark1{
+  background: linear-gradient(to right, #ffffff, #00bfa5, #ff9800);
+
+}
+.bg-overlay.mark2{
+      background: linear-gradient(to right, white, #b3003c);
+
+}
+.bg-overlay.mark3{
+      background: linear-gradient(to right, white, #4b006e);
+
+}
+
+
+.herbe2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: url(./img/herbe.png);
+    height: 500px;
+    display: block;
+    background-size: contain;
+    background-position: 100px 0, 0 0;
+    z-index: 1;
+    filter: blur(2px);
+    pointer-events: none;
+
+}
+
+
+.listcan{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+       filter: brightness(1.2) contrast(1.1) saturate(1.3) drop-shadow(5px 5px 10px rgba(255, 165, 0, 0.7));
+    
+    /* Ombre portée pour simuler l’ombre portée par le soleil */
+    box-shadow: 8px 8px 15px rgba(255, 140, 0, 0.6);
+    z-index: 100;
+}
+.listcan::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 550px;
+    width: 100%;
+    display: block;
+    background-image: url(./img/herbe.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 1000000000;
+    pointer-events: none;
+    background-repeat: repeat-x;
+
+}
+.containerCan1 {
+  position: relative !important;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  scale: 0.8;
+  cursor: pointer;
+  
+
+}
+.markmed{
+      background-image: url(./img/medcan.png), url(./img/soda.png);
+}
+
+.containerCan1:hover{
+    rotate: 19deg;
+      transform: translateY(-100px);
+        z-index: 100000000;
+
+
+}
+
+@media (max-width: 800px) {
+  .listcan {
+    width: 200%;
+
+    padding-left: 1em;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .listcan {
+    width: 240%;
+
+    padding-left: 1em;
+  }
+
+}
