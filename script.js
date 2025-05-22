@@ -402,7 +402,7 @@ words.forEach((word, wordIndex) => {
     document.addEventListener('mousemove', (e) => {
       if (!isDragging) return;
       const deltaX = e.clientX - startX;
-      let newLeft = clamp(currentLeft + deltaX, -500, 0);
+      let newLeft = clamp(currentLeft + deltaX, -635, 0);
       listcan.style.left = `${newLeft}px`;
     });
 
@@ -422,7 +422,7 @@ words.forEach((word, wordIndex) => {
     listcan.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
       const deltaX = e.touches[0].clientX - startX;
-      let newLeft = clamp(currentLeft + deltaX, -500, 0);
+      let newLeft = clamp(currentLeft + deltaX, -635, 0);
       listcan.style.left = `${newLeft}px`;
     });
 
