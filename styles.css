@@ -489,10 +489,10 @@ header {
     height: 180vh;
     width: 100%;
     overflow: hidden;
-    background-image: url(./img/champ.png);
-    background-position: top;
+    background-image: url(./img/backgroundchamp.jpg);
+    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
 }
 .bg-overlay {
     position: absolute;
